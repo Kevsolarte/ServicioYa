@@ -1,0 +1,390 @@
+/* ===================== SOLO HOMEPAGE ===================== */
+/* Variables y fondo claros, SOLO dentro de .home.light */
+.home.light {
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --text: #0b1220;
+  --muted: #667085;
+  --border: #e5e7eb;
+  --primary: #0f172a;
+  /* botón oscuro */
+  --accent: #0b1220;
+  /* títulos */
+  --radius: 18px;
+  --radius-lg: 22px;
+  --shadow: 0 8px 24px rgba(2, 6, 23, .06), 0 2px 8px rgba(2, 6, 23, .04);
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* resets locales */
+.home.light * {
+  box-sizing: border-box
+}
+
+.home.light img {
+  max-width: 100%;
+  display: block
+}
+
+.home.light .container {
+  width: min(1200px, 92%);
+  margin-inline: auto
+}
+
+/* -------- NAVBAR (clara, translúcida) -------- */
+.home.light .nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: saturate(1.1) blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.home.light .nav--light {
+  background: rgba(255, 255, 255, .85)
+}
+
+.home.light .nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .8rem 0
+}
+
+.home.light .brand {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: .2px
+}
+
+.home.light .nav__menu {
+  display: flex;
+  gap: .6rem
+}
+
+.home.light .nav__menu a {
+  color: #374151;
+  text-decoration: none;
+  font-weight: 600;
+  padding: .35rem .65rem;
+  border-radius: 999px;
+  transition: background .2s ease;
+}
+
+.home.light .nav__menu a:hover {
+  background: #eef2ff
+}
+
+/* botones (solo dentro del home) */
+.home.light .btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  padding: .68rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  transition: box-shadow .2s ease, transform .05s ease, background .2s ease, border-color .2s ease;
+}
+
+.home.light .btn--dark {
+  background: var(--primary);
+  color: #fff;
+  border-color: transparent
+}
+
+.home.light .btn--dark:hover {
+  box-shadow: 0 10px 20px rgba(2, 6, 23, .12)
+}
+
+.home.light .pill {
+  border-radius: 999px
+}
+
+/* -------- HERO (izq texto, der imagen) -------- */
+.home.light .hero {
+  padding: 1.8rem 0
+}
+
+.home.light .hero__grid {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: 1fr
+}
+
+@media (min-width:900px) {
+  .home.light .hero__grid {
+    grid-template-columns: 1.15fr .85fr;
+    align-items: center
+  }
+}
+
+.home.light .hero__left h1 {
+  margin: 0 0 .6rem 0;
+  font-size: clamp(2rem, 3.2vw, 3.1rem);
+  line-height: 1.07;
+  font-weight: 900;
+  letter-spacing: -.02em;
+  color: var(--accent);
+}
+
+.home.light .hero__subtitle {
+  color: var(--muted);
+  margin: 0 0 1rem 0;
+  font-weight: 600
+}
+
+.home.light .hero__right {
+  display: block
+}
+
+.home.light .hero__image {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  background: #f3f4f6;
+}
+
+/* -------- Buscador pill -------- */
+.home.light .search {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  background: var(--panel);
+  padding: .55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 740px;
+}
+
+.home.light .search:focus-within {
+  box-shadow: 0 0 0 4px rgba(17, 24, 39, .05), var(--shadow)
+}
+
+.home.light .search input {
+  flex: 1 1 220px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  padding: .85rem 1rem;
+  border-radius: 999px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.home.light .search input::placeholder {
+  color: #9aa3b2;
+  font-weight: 500
+}
+
+.home.light .search .btn {
+  padding: .9rem 1.1rem
+}
+
+/* -------- Sección categorías -------- */
+.home.light .section {
+  padding: 2rem 0
+}
+
+.home.light .section__title {
+  margin: 0 0 .9rem 0;
+  font-size: 1.28rem;
+  font-weight: 900
+}
+
+/* grid responsive de categorías */
+.home.light .cards-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr)
+}
+
+@media (min-width:640px) {
+  .home.light .cards-grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@media (min-width:900px) {
+  .home.light .cards-grid {
+    grid-template-columns: repeat(4, 1fr)
+  }
+}
+
+/* tarjeta de categoría (funciona con tu componente Card) */
+.home.light .cards-grid .card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform .12s ease, box-shadow .2s ease;
+}
+
+.home.light .cards-grid .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(2, 6, 23, .08)
+}
+
+.home.light .cards-grid .card img {
+  height: 170px;
+  object-fit: cover
+}
+
+.home.light .cards-grid .card h2 {
+  margin: .85rem .95rem .2rem;
+  font-size: 1rem;
+  color: var(--text)
+}
+
+.home.light .cards-grid .card p {
+  margin: 0 .95rem .95rem;
+  color: var(--muted);
+  font-size: .92rem
+}
+
+/* -------- Sección servicios (tarjetas) -------- */
+.home.light .grid-svc {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(12, 1fr)
+}
+
+.home.light .grid-svc>* {
+  grid-column: span 12
+}
+
+@media (min-width:700px) {
+  .home.light .grid-svc>* {
+    grid-column: span 6
+  }
+}
+
+@media (min-width:1024px) {
+  .home.light .grid-svc>* {
+    grid-column: span 4
+  }
+}
+
+.home.light .pager {
+  margin-top: 1.1rem;
+  display: flex;
+  gap: .6rem;
+  justify-content: flex-end
+}
+
+/* -------- Footer claro -------- */
+.home.light .footer {
+  background: #fff;
+  border-top: 1px solid var(--border)
+}
+
+.home.light .footer__inner {
+  padding: 1.3rem 0;
+  color: #6b7280
+}
+
+/* Fuente Arial SOLO en el Home */
+.home.light {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Asegura que controles de formulario tomen la misma fuente */
+.home.light input,
+.home.light button,
+.home.light select,
+.home.light textarea {
+  font: inherit;
+  /* hereda tamaño y familia */
+}
+
+/* Por si algún componente trae su propia font, forzamos la herencia */
+.home.light * {
+  font-family: inherit;
+}
+/* ==== Header de sección + botón “Ver todos” ==== */
+.home.light .section__head{
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:.75rem;
+}
+.home.light .section__head .link{
+  text-decoration:none;
+  display:inline-flex; align-items:center; gap:.4rem;
+  padding:.55rem .9rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff; color:#111827; font-weight:700;
+  box-shadow: var(--shadow);
+  transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+}
+.home.light .section__head .link:hover{
+  background:#f8fafc;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(2,6,23,.08);
+}
+/* ====== CÓMO FUNCIONA (scope Home) ====== */
+.home.light .howto{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.home.light .howto__grid{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 700px){
+  .home.light .howto__grid{ grid-template-columns: repeat(4, 1fr); }
+}
+
+.home.light .howto__item{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  transition: transform .12s ease, box-shadow .2s ease;
+}
+
+.home.light .howto__item:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(2,6,23,.08);
+}
+
+.home.light .howto__icon{
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: #f3f4f6;
+  font-size: 1.1rem; font-weight: 800;
+  margin-bottom: .4rem;
+}
+
+.home.light .howto__title{
+  margin: .2rem 0 0 0;
+  font-size: 1rem; font-weight: 900;
+}
+
+.home.light .howto__text{
+  margin: .15rem 0 0 0;
+  color: var(--muted);
+}
+
+.home.light .howto__cta{
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}

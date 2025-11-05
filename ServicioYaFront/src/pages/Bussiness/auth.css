@@ -1,0 +1,165 @@
+/* ===================== AUTH (Login / Registro) ===================== */
+/* Envuelve la página con <div class="auth light"> ... */
+.auth.light{
+  /* variables del tema claro (alineadas con Home) */
+  --bg:#ffffff;
+  --panel:#ffffff;
+  --text:#0b1220;
+  --muted:#667085;
+  --border:#e5e7eb;
+  --primary:#0f172a;
+  --radius:18px;
+  --radius-lg:22px;
+  --shadow:0 8px 24px rgba(2,6,23,.06), 0 2px 8px rgba(2,6,23,.04);
+
+  background:var(--bg);
+  color:var(--text);
+  font-family: Arial, Helvetica, sans-serif; /* misma fuente que pediste */
+}
+
+/* helpers locales */
+.auth.light *{ box-sizing:border-box }
+.auth.light .container{ width:min(1000px,92%); margin-inline:auto }
+
+/* -------- Layout principal (split en desktop) -------- */
+.auth.light .auth__wrap{
+  display:grid; gap:1rem; padding:2.2rem 0;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 940px){
+  .auth.light .auth__wrap{
+    grid-template-columns: 1.05fr .95fr; /* izquierda: card / derecha: side */
+    align-items: stretch;
+  }
+}
+
+/* -------- Tarjeta del formulario -------- */
+.auth.light .auth__card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding:1.8rem;
+}
+.auth.light .auth__card h2{
+  margin:.2rem 0 .25rem 0; font-size:1.6rem; font-weight:900;
+}
+.auth.light .auth__subtitle{
+  margin:.25rem 0 1.1rem 0; color:var(--muted); font-weight:600;
+}
+
+/* -------- Form -------- */
+.auth.light .auth__form{
+  display:flex; flex-direction:column; gap:1rem;
+}
+.auth.light .auth__form label{
+  display:flex; flex-direction:column; gap:.45rem;
+  font-weight:700; color:#1f2937;
+}
+.auth.light .auth__form input{
+  background:#fff; color:var(--text);
+  border:1px solid var(--border);
+  border-radius:12px; padding:.85rem 1rem; outline:0;
+  transition:border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.auth.light .auth__form input::placeholder{ color:#98a2b3 }
+.auth.light .auth__form input:focus{
+  border-color:#cfd4ff; box-shadow:0 0 0 4px rgba(99,102,241,.12);
+}
+.auth.light .auth__form input[aria-invalid="true"]{ border-color:#ef4444 }
+
+.auth.light .auth__row{
+  display:grid; gap:.8rem; grid-template-columns:1fr;
+}
+@media (min-width: 560px){
+  .auth.light .auth__row{ grid-template-columns:1fr 1fr }
+}
+
+.auth.light .auth__pass{ display:flex; gap:.5rem; align-items:center }
+.auth.light .auth__pass input{ flex:1 }
+.auth.light .auth__pass .btn{ border-radius:12px }
+
+.auth.light .err{ color:#ef4444; font-weight:700 }
+.auth.light .hint{ color:var(--muted); font-size:.9rem }
+
+/* -------- Actions -------- */
+.auth.light .actions{
+  display:flex; gap:.6rem; align-items:center; margin-top:.2rem;
+}
+.auth.light .btn{
+  border:1px solid var(--border); background:#fff; color:var(--text);
+  padding:.8rem 1rem; border-radius:12px;
+  display:inline-flex; align-items:center; gap:.5rem;
+  text-decoration:none; font-weight:800;
+  transition:box-shadow .2s ease, transform .05s ease, background .2s ease, border-color .2s ease;
+}
+.auth.light .btn:hover{ background:#f8fafc }
+.auth.light .btn:active{ transform:translateY(1px) }
+
+.auth.light .btn--dark{
+  background:var(--primary); color:#fff; border-color:transparent;
+  box-shadow: var(--shadow);
+}
+.auth.light .btn--dark:hover{ box-shadow:0 10px 22px rgba(2,6,23,.12) }
+
+.auth.light .btn--ghost{
+  background:#fff; color:#111827; border:1px solid var(--border);
+}
+
+.auth.light .pill{ border-radius:999px }
+
+.auth.light .auth__alt{
+  margin-top:1rem; display:flex; gap:.4rem; align-items:center; justify-content:center;
+  color:var(--muted); font-weight:600;
+}
+.auth.light .auth__alt .link{
+  color:#111827; text-decoration:none; font-weight:900;
+  padding:.35rem .6rem; border-radius:999px;
+}
+.auth.light .auth__alt .link:hover{ background:#f3f4f6 }
+
+/* -------- Panel lateral (ilustración/marca) -------- */
+.auth.light .auth__side{
+  display:none;
+}
+@media (min-width: 940px){
+  .auth.light .auth__side{
+    display:block; border-radius: var(--radius);
+    border:1px solid var(--border); overflow:hidden; position:relative;
+    box-shadow: var(--shadow); background:#f8fafc;
+  }
+  .auth.light .auth__side-img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    filter:saturate(1.05) contrast(1.02);
+  }
+  .auth.light .auth__side-overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.6) 35%, rgba(255,255,255,.0) 65%);
+  }
+  .auth.light .auth__side-content{
+    position:absolute; top:0; left:0; right:0;
+    padding:1.1rem 1.2rem;
+  }
+  .auth.light .auth__logo{
+    font-weight:900; letter-spacing:.2px; color:var(--text);
+    background:#fff; border:1px solid var(--border);
+    display:inline-flex; padding:.45rem .7rem; border-radius:12px;
+    box-shadow: var(--shadow);
+  }
+  .auth.light .auth__claim{
+    position:absolute; left:1.2rem; bottom:1.2rem; right:1.2rem;
+    background:#fff; border:1px solid var(--border); border-radius:14px;
+    padding:.9rem; box-shadow: var(--shadow);
+    font-weight:800; line-height:1.2;
+  }
+}
+
+/* -------- Avisos de error superiores (API, etc.) -------- */
+.auth.light .alert{
+  background:#fef2f2; border:1px solid #fecaca; color:#991b1b;
+  border-radius:12px; padding:.75rem .9rem; font-weight:700; margin-bottom:.8rem;
+}
+
+/* -------- Estados deshabilitados -------- */
+.auth.light .btn[disabled]{ opacity:.6; cursor:not-allowed }
+.auth.light input[disabled]{ background:#f6f7fb; cursor:not-allowed }

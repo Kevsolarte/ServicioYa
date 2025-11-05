@@ -1,0 +1,508 @@
+/* ===== Paleta clara (igual que Home/Login/Register) ===== */
+.dash--light {
+    --bg: #ffffff;
+    --panel: #ffffff;
+    --text: #0b1220;
+    --muted: #667085;
+    --border: #e5e7eb;
+    --primary: #0f172a;
+    /* botón oscuro */
+    --radius: 18px;
+    --shadow: 0 8px 24px rgba(2, 6, 23, .06), 0 2px 8px rgba(2, 6, 23, .04);
+
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, system-ui, Segoe UI, Roboto, Helvetica, sans-serif;
+    /* igual que Home */
+    padding: 1rem;
+}
+
+/* Top bar */
+.dash--light .dash__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: .6rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+}
+
+.dash--light .dash__user {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    color: var(--muted);
+}
+
+/* Botones base (idénticos a Home) */
+.dash--light .btn {
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+    padding: .68rem 1rem;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    cursor: pointer;
+    transition: box-shadow .2s ease, transform .05s ease, background .2s ease, border-color .2s ease;
+}
+
+.dash--light .btn:hover {
+    box-shadow: var(--shadow);
+}
+
+.dash--light .btn--dark {
+    background: var(--primary);
+    color: #fff;
+    border-color: transparent;
+}
+
+.dash--light .btn--outline {
+    background: transparent;
+    border: 1px solid var(--border);
+}
+
+/* Chips de negocios (claro) */
+.dash--light .chips {
+    display: flex;
+    gap: .6rem;
+    flex-wrap: wrap;
+}
+
+.dash--light .chip {
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+    padding: .5rem .9rem;
+    border-radius: 999px;
+    transition: .15s;
+    cursor: pointer;
+}
+
+.dash--light .chip:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+}
+
+.dash--light .chip--active {
+    background: #eef2ff;
+    border-color: #cfd4ff;
+}
+
+.dash--light .chip--add {
+    font-weight: 800;
+}
+
+/* Grid principal */
+.dash--light .dash__grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 260px 1fr;
+}
+
+@media (max-width: 900px) {
+    .dash--light .dash__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Sidebar */
+.dash--light .dash__side {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.dash--light .sidebtn {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    color: var(--text);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 700;
+    transition: background .2s ease, border-color .2s ease;
+}
+
+.dash--light .sidebtn:hover {
+    background: #f9fafb;
+}
+
+.dash--light .sidebtn--active {
+    background: #eef2ff;
+    border-color: #cfd4ff;
+}
+
+/* Contenido */
+.dash--light .dash__content {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    min-height: 420px;
+    box-shadow: var(--shadow);
+    color: var(--text);
+}
+
+.dash--light .muted {
+    color: var(--muted);
+}
+
+.dash--light .err {
+    color: #dc2626;
+}
+
+.dash--light .panel h3 {
+    margin: .2rem 0;
+}
+
+.dash--light .lbl {
+    display: block;
+    color: var(--muted);
+    font-size: .9rem;
+    margin-bottom: .2rem;
+}
+
+.dash--light .grid2 {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width:700px) {
+    .dash--light .grid2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.dash--light .strong {
+    font-weight: 800;
+}
+
+/* Modal (claro) */
+.dash--light .modal__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 39, .35);
+    display: grid;
+    place-items: center;
+    z-index: 50;
+}
+
+.dash--light .modal {
+    width: min(640px, 92vw);
+    background: #fff;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.dash--light .modal__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: .8rem;
+    padding-bottom: .4rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.dash--light .modal__title {
+    margin: 0;
+}
+
+.dash--light .form {
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+}
+
+.dash--light .form input,
+.dash--light .form textarea,
+.dash--light .form select {
+    width: 100%;
+    background: #fff;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: .8rem 1rem;
+    outline: 0;
+}
+
+.dash--light .form input:focus,
+.dash--light .form textarea:focus,
+.dash--light .form select:focus {
+    border-color: #d1d5fe;
+    box-shadow: 0 0 0 4px rgba(17, 24, 39, .05);
+}
+
+.dash--light .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: .6rem;
+    margin-top: .4rem;
+}
+
+/* Servicios (cards) */
+.dash--light .services {
+    margin-top: 1.2rem;
+}
+
+.dash--light .services__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .6rem;
+}
+
+.dash--light .srvgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: .9rem;
+}
+
+.dash--light .srvcard {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: .9rem;
+    box-shadow: var(--shadow);
+    color: var(--text);
+}
+
+.dash--light .srvcard__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: .6rem;
+}
+
+.dash--light .srvcard__title {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.dash--light .srvcard__desc {
+    color: var(--muted);
+    margin: .4rem 0 .6rem;
+    min-height: 2.4em;
+}
+
+.dash--light .srvcard__meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .6rem;
+}
+
+/* Calendario y citas (si los usas dentro) */
+.dash--light .cal__title {
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+.dash--light .apptcard {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: .9rem;
+    box-shadow: var(--shadow);
+}
+
+/* ===== Calendario (paleta clara, consistente con Home/Login) ===== */
+.dash--light .cal {
+    margin-top: .6rem;
+}
+
+/* header del mes */
+.dash--light .cal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .6rem;
+}
+
+.dash--light .cal__title {
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+/* cabecera de días */
+.dash--light .cal__week--head {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: .35rem;
+    color: var(--muted);
+}
+
+.dash--light .cal__dow {
+    text-align: center;
+    font-weight: 700;
+    font-size: .9rem;
+    padding: .25rem 0;
+}
+
+/* grilla de días */
+.dash--light .cal__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: .35rem;
+}
+
+.dash--light .cal__cell {
+    min-height: 120px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: box-shadow .15s ease, transform .05s ease, background .15s ease, border-color .15s ease;
+}
+
+.dash--light .cal__cell:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+}
+
+.dash--light .cal__cell--muted {
+    opacity: .45;
+}
+
+.dash--light .cal__cell--today {
+    outline: 2px solid rgba(17, 24, 39, .08);
+    background: #fcfcff;
+}
+
+/* fecha + eventos */
+.dash--light .cal__date {
+    font-weight: 900;
+    color: var(--text);
+    margin-bottom: .25rem;
+}
+
+.dash--light .cal__events {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    overflow: auto;
+}
+
+/* “chips” de cita dentro del día */
+.dash--light .cal__event {
+    background: #f9fafb;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: .35rem .5rem;
+    font-size: .92rem;
+    display: flex;
+    gap: .45rem;
+    align-items: center;
+    transition: background .15s ease, border-color .15s ease;
+}
+
+.dash--light .cal__event:hover {
+    background: #eef2ff;
+    border-color: #cfd4ff;
+}
+
+.dash--light .cal__time {
+    font-variant-numeric: tabular-nums;
+    color: var(--muted);
+    min-width: 52px;
+}
+
+.dash--light .cal__summary {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===== Modal de “Eventos del día” (ya usado por el dashboard) ===== */
+.dash--light .modal--lg {
+    width: min(1000px, 96vw);
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.dash--light .modal__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: .8rem;
+    padding-bottom: .6rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.dash--light .modal__title {
+    margin: 0;
+    font-weight: 900;
+}
+
+.dash--light .modal__body {
+    padding-top: .8rem;
+    overflow: auto;
+}
+
+/* grid de tarjetas de citas dentro del modal */
+.dash--light .apptgrid {
+    display: grid;
+    gap: .9rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* tarjeta de cita */
+.dash--light .apptcard {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: .9rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.dash--light .apptcard__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .6rem;
+}
+
+.dash--light .apptcard__time {
+    font-weight: 800;
+    letter-spacing: .2px;
+}
+
+.dash--light .apptcard__title {
+    font-weight: 900;
+}
+
+.dash--light .apptcard__sub {
+    font-size: .95rem;
+    color: var(--muted);
+}
+
+.dash--light .apptcard__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: .6rem;
+    margin-top: .2rem;
+}

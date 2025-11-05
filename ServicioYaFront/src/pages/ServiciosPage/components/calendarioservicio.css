@@ -1,0 +1,165 @@
+/* ======== Service Detail (paleta clara) ======== */
+
+.svc-detail {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: 1fr;
+  font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, sans-serif;
+}
+
+@media (min-width: 920px) {
+  .svc-detail {
+    grid-template-columns: 1.1fr .9fr;
+    align-items: start;
+  }
+}
+
+/* Media (imagen grande a la izquierda) */
+.svc-detail__media { position: relative; }
+.svc-detail__image {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 18px;
+  background: #f3f4f6;
+  box-shadow:
+    0 8px 24px rgba(2,6,23,.06),
+    0 2px 8px rgba(2,6,23,.04);
+  display: block;
+}
+
+/* Lado derecho: datos + calendario */
+.svc-detail__side {
+  display: grid;
+  gap: 1rem;
+}
+
+.svc-detail__biz {
+  margin-top: .2rem;
+  font-weight: 700;
+  color: #1f2937; /* gris fuerte */
+}
+
+.svc-detail__meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+  margin-top: .5rem;
+}
+
+.svc-detail .lbl {
+  color: #667085;             /* muted claro */
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.svc-detail .strong {
+  font-weight: 900;
+}
+
+/* Panel del calendario a la derecha */
+.svc-detail__calendar {
+  margin-top: .2rem;
+  background: #ffffff;                   /* panel claro */
+  border: 1px solid #e5e7eb;             /* border claro */
+  border-radius: 18px;
+  padding: .9rem;
+  box-shadow:
+    0 8px 24px rgba(2,6,23,.06),
+    0 2px 8px rgba(2,6,23,.04);
+}
+
+/* ======== Mini calendario (CalendarInline) ======== */
+
+.svc-cal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .4rem;
+}
+
+.svc-cal__title {
+  font-weight: 900;
+}
+
+.svc-cal__actions .btn {
+  padding: .45rem .65rem;
+  border-radius: 10px;
+}
+
+/* Cabecera de días */
+.svc-cal__weekhead {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: .25rem;
+  margin: .35rem 0;
+}
+
+.svc-cal__dow {
+  text-align: center;
+  color: #667085;
+  font-weight: 700;
+  font-size: .85rem;
+}
+
+/* Rejilla de días */
+.svc-cal__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: .25rem;
+}
+
+/* Celda de día (sin “líneas” interiores fuertes) */
+.svc-cal__cell {
+  background: #fff;
+  border: 1px solid #e5e7eb;         /* línea suave */
+  border-radius: 10px;
+  padding: .6rem 0;
+  text-align: center;
+  cursor: pointer;
+  transition: background .15s ease, border-color .15s ease, transform .05s ease;
+}
+
+.svc-cal__cell:hover {
+  background: #f9fafb;               /* hover sutil */
+  border-color: #d8dbe6;
+}
+
+.svc-cal__cell--today {
+  outline: 2px solid rgba(17,24,39,.08);  /* marca “hoy” sin bordes duros */
+}
+
+.svc-cal__cell--sel {
+  background: #eef2ff;               /* selección suave (indigo muy claro) */
+  border-color: #cfd4ff;
+}
+
+.svc-cal__cell--muted { opacity: .45; }
+
+.svc-cal__date {
+  font-weight: 800;
+}
+
+/* Mensajes utilitarios locales por si no heredan del global */
+.svc-detail .muted { color: #667085; }
+.svc-detail .err { color: #ef4444; }
+
+/* Botón principal estilo Home/Login (por si en esta vista no están cargados) */
+.svc-detail .btn {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #0b1220;
+  padding: .7rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+.svc-detail .btn.btn--dark {
+  background: #0f172a; /* primary oscuro del Home */
+  color: #fff;
+  border-color: transparent;
+}
+.svc-detail .btn.pill { border-radius: 999px; }

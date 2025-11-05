@@ -1,0 +1,179 @@
+/* ====== BookingModal (paleta clara, aislado) ====== */
+
+.modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, .35);
+  /* overlay suave */
+  display: grid;
+  place-items: center;
+  z-index: 60;
+}
+
+.modal {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(2, 6, 23, .06), 0 2px 8px rgba(2, 6, 23, .04);
+  color: #0b1220;
+  width: min(920px, 94vw);
+  max-height: 88vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, sans-serif;
+}
+
+.modal--xl {
+  width: min(980px, 96vw);
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem;
+  padding-bottom: .6rem;
+  margin-bottom: .4rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal__header .btn {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #0b1220;
+  padding: .55rem .75rem;
+  border-radius: 12px;
+}
+
+.modal__sub {
+  color: #667085;
+  font-weight: 600;
+  margin: .2rem 0 .4rem;
+}
+
+/* Grid de horarios */
+.slots__grid {
+  display: grid;
+  gap: .5rem;
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+}
+
+/* Botón de slot (hora) */
+.slotbtn {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #0b1220;
+  border-radius: 12px;
+  padding: .55rem .7rem;
+  font-weight: 800;
+  transition: background .15s ease, border-color .15s ease, transform .05s ease;
+}
+
+.slotbtn:hover {
+  background: #f3f4f6;
+  border-color: #cbd5e1;
+}
+
+.slotbtn--active {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #fff;
+}
+
+/* Separador */
+.line {
+  height: 1px;
+  background: #e5e7eb;
+  margin: .9rem 0;
+}
+
+/* Formulario */
+.grid2 {
+  display: grid;
+  gap: .9rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width:700px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid2 label {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+
+.grid2 label>span {
+  color: #667085;
+  font-weight: 700;
+  font-size: .92rem;
+}
+
+.grid2 input {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: .85rem 1rem;
+  outline: 0;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.grid2 input:focus {
+  border-color: #d1d5fe;
+  box-shadow: 0 0 0 4px rgba(17, 24, 39, .05);
+}
+
+/* Mensajes */
+.muted {
+  color: #667085;
+}
+
+.err {
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  padding: .6rem .8rem;
+  border-radius: 12px;
+}
+
+.ok {
+  color: #166534;
+  background: #ecfdf5;
+  border: 1px solid #d1fae5;
+  padding: .6rem .8rem;
+  border-radius: 12px;
+}
+
+/* Acciones (botonera) */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: .6rem;
+}
+
+.modal .btn {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #0b1220;
+  padding: .7rem 1rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.modal .btn.btn--dark {
+  background: #0f172a;
+  color: #fff;
+  border-color: transparent;
+}
+
+.modal .btn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
